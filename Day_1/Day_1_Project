@@ -1,0 +1,10 @@
+#Project of the Day_1
+
+#Printing welcoming
+print("Welcome to the Band Name Generator.")
+#Asking user in what city did he/she grew up in
+user_city = input("What's the name of the city you grew up in?\n")
+#Asking user pet's name
+user_petname = input("what's your pet's name?\n")
+#Printing the name of the band
+print(f"Your band name could be {user_city} {user_petname}")
