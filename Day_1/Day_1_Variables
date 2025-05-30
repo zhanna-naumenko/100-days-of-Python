@@ -1,0 +1,28 @@
+#How to print the string from the new line
+print("1. Mix 500g of Flour, 10g Yeast and "
+      "300ml Water in a bowl.\n2. Knead the "
+      "dough for 10 minutes.\n3. Add 3g of "
+      "Salt.\n4. Leave to rise for 2 hours."
+      "\n5. Bake at 200 degrees C for 30 minutes.")
+
+
+#How to use input() function
+print("Hello " + input("What is your name?") + "!")
+
+user_name = input("What is your name?")
+print(f"Hello {user_name}!")
+
+#How to check the number of characters in the word
+
+print(len(input("What is your name?")))
+
+name = "Jack"
+print(name)
+print(len(name))
+
+name = "Angela"
+print(f"There are {len(name)} characters in the name {name}")
+
+user_name1 = input("What is your name?")
+length = len(user_name1)
+print(length)
