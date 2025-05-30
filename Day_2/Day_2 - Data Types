@@ -1,0 +1,48 @@
+#Subscripting
+print("Hello" [0])
+
+word = "Hello"
+print(word[1])
+
+#Printing the last letter
+print(word[-1])
+print(word[len(word) - 1])
+
+#Streing
+print("123" + "345")
+
+# Integer = Whole number
+print(123 + 345)
+
+#Float = Floating point number
+print(3.14159)
+
+#Boolean
+True
+False
+
+
+# Integer in to String
+
+# correct the mistake  - len(123456)
+
+print(len("123456"))
+print(len(str(123456)))
+
+#Four primitive python data types
+print(type("Hello"))
+print(type(123))
+print(type(3.42))
+print(type(True))
+
+print(int("123") + int("456"))
+
+print("Number of letters in your name:" + str(len(input("What is your name?\n"))))
+#or
+name_of_user = input("What is your name?\n")
+len_of_name = len(name_of_user)
+print(type("Number of letters in your name: "))
+print(type(len_of_name))
+print("Number of letters in your name: " + str(len_of_name))
+
+print(3 * (3 + 3) / 3 - 3)
