@@ -1,17 +1,3 @@
-#Printing the title
-# print("Even or Odd")
-#
-# #Asking user to pick the number
-# user_number = int(input("Please write a whole number: "))
-#
-# # Check if the user's number is odd or even using the modulo operator.
-# # If the remainder when dividing by 2 is 1, it's an odd number; otherwise, it's even.
-# if user_number % 2 == 1:
-#     print(f"The number {user_number} is an odd number.")
-# else:
-#     print(f"The number {user_number} is even.")
-
-
 #Printing welcoming
 print("Welcome to the Rollercoaster!")
 
