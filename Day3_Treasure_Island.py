@@ -13,14 +13,14 @@ if choice_direction == "left":
         if choice_door =="yellow":
             print("Congratulation! You WIN!")
         elif choice_door == "red" or choice_door == "blue":
-            print("Game over!")
+            print("You fell into a deep, bottomless pit. Game over!")
         else:
             print("Your input is wrong. Please try again")
     elif choice_action == "swim":
-        print("Game over!")
+        print("A giant fish swallowed you. Game over!")
     else:
         print("Your input is wrong. Please try again")
 elif choice_direction == "right":
-    print("Game over!")
+    print("You came across a giant spider and lost the battle. Game over!")
 else:
     print("Your input is wrong. Please try again")
