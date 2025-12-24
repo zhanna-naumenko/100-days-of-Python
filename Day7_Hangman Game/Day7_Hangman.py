@@ -39,6 +39,6 @@ while numb_of_guess < numb_of_mistakes and "_" in blank_list:
 
 # final result
 if "_" in blank_list:
-    print(f"You loose!\n The word was: {random_word}")
+    print(f"You lose!\n The word was: {random_word}")
 else:
     print("You WIN!")
