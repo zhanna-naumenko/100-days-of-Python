@@ -6,19 +6,8 @@ print("Welcome to Caesar Cipher!")
 # Create a string containing all lowercase letters of the English alphabet
 alphabet = string.ascii_lowercase
 
-# Ask the user whether they want to encode (encrypt) or decode (decrypt) a message
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt: ").lower()
-
-# Ask the user to enter the text they want to encrypt/decrypt
-user_text = input("Type your message: ").lower()
-
-# Ask the user for the shift number (how many positions to move in the alphabet)
-shift = int(input("Type the shift number: "))
-
 
 def caesar_cipher(text, number, cryptic):
-    # List to store the numeric positions of each character in the alphabet
-    numb_of_position = []
 
     # String that will store the final encrypted/decrypted word
     new_word = ""
@@ -27,23 +16,42 @@ def caesar_cipher(text, number, cryptic):
     if cryptic == "decode":
         number *= -1
 
-    # Convert each character in the text to its index in the alphabet
-    for val in text:
-        numb_of_position.append(alphabet.index(val))
+    for letter in text:
+        # Process only alphabetic characters
+        if letter in alphabet:
+            shifted_position = alphabet.index(letter) + number
+            shifted_position %= len(alphabet)
+            new_word += alphabet[shifted_position]
+        else:
+            # Keep spaces, numbers, and punctuation unchanged
+            new_word += letter
 
-    # Apply the shift to each index and wrap around using modulo
-    list_of_numbers = [(x + number) % len(alphabet) for x in numb_of_position]
-
-    # Convert shifted indices back into letters
-    for char in list_of_numbers:
-        new_word = new_word + alphabet[char]
-
-    # Display the final result
     print(f"Here is the {cryptic}d result: {new_word}")
 
+in_program = True
 
-# Call the function with user input
-caesar_cipher(user_text, shift, direction)
+while in_program:
+    # Ask the user whether they want to encode (encrypt) or decode (decrypt) a message
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt: ").lower()
+
+    # Ask the user to enter the text they want to encrypt/decrypt
+    user_text = input("Type your message: ").lower()
+
+    # Ask the user for the shift number (how many positions to move in the alphabet)
+    shift = int(input("Type the shift number: "))
+
+    # Call the function with user input
+    caesar_cipher(user_text, shift, direction)
+
+    restart = input("Please type 'yes' if you want to go again and 'no' if you want to exit the program: ").lower()
+
+    if restart == "no":
+        in_program = False
+        print("Goodbye!")
+
+
+
+
 # -------------------------------------------------------------------------
 # more Pythonic version
 
