@@ -1,0 +1,67 @@
+import Day10_art
+
+# Print calculator logo
+print(Day10_art.logo)
+
+# Define basic math operations
+def add(n1, n2):
+    return n1 + n2
+
+def subtract(n1, n2):
+    return n1 - n2
+
+def multiply (n1, n2):
+    return n1 * n2
+
+def divide(n1, n2):
+    return n1 / n2
+
+# Dictionary that maps operators to functions
+dictionary_operations = {
+    '+': add,
+    '-': subtract,
+    '*': multiply,
+    '/': divide
+}
+
+# Controls the entire program
+calculate_on = True
+
+while calculate_on:
+    # Ask user for the first number
+    user_first_numb = float(input("What's the first number? "))
+
+    # Controls continuation with the current result
+    continue_calculation = True
+    while continue_calculation:
+
+        # Show available operations
+        print("+\n-\n*\n/\n")
+        # Ask user to choose an operation
+        user_operation = input("Pick an operation: ")
+        # Ask for the next number
+        user_second_numb = float(input("What's the next number? "))
+
+        # Perform the calculation using the dictionary
+        result = dictionary_operations[user_operation](user_first_numb, user_second_numb)
+        # Display the result
+        print(f"{user_first_numb} {user_operation} {user_second_numb} = {result}")
+
+        # Ask the user what to do next
+        choice = input(
+            f"Type 'y' to continue with {result}, 'n' to start a new calculation, or 'x' to exit: "
+        ).lower()
+
+        if choice == 'y':
+            # Continue calculating using the current result
+            user_first_numb = result
+        elif choice == 'n':
+            # Stop inner loop and start a new calculation
+            continue_calculation = False
+        elif choice == 'x':
+            # Stop both loops and exit the program
+            continue_calculation = False
+            calculate_on = False
+        else:
+            # Handle invalid input
+            print("Please enter 'y', 'n', or 'x'.")
